@@ -1,0 +1,201 @@
+#o-nas {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  scroll-margin-top: 80px;
+}
+
+.o-nas-heading-row {
+  width: 100%;
+  padding: 80px 0 56px;
+  text-align: center;
+  background: #fff;
+}
+
+.o-nas-heading {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.o-nas-body {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.o-nas-sidebar {
+  width: 20%;
+  background: #dcecff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 60px 0;
+}
+
+.o-nas-sidebar-logo {
+  transform: rotate(270deg);
+  height: auto;
+  max-width: 180px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.o-nas-sidebar-placeholder {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.o-nas-content {
+  width: 80%;
+  padding: 56px 12% 80px 8%;
+  display: flex;
+  flex-direction: column;
+}
+
+.o-nas-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.o-nas-block:last-child {
+  margin-bottom: 0;
+}
+
+.o-nas-block-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.o-nas-block-header .icon {
+  color: #9DC9FD;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.o-nas-subheading {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.o-nas-block p {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.o-nas-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.o-nas-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.o-nas-pillar .icon {
+  color: #9DC9FD;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.o-nas-pillar span {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.o-nas-pillar span strong {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+
+  #o-nas {
+    scroll-margin-top: 64px;
+  }
+
+  .o-nas-heading-row {
+    background: #dcecff;
+    padding: 40px 24px 28px;
+    text-align: center;
+  }
+
+  .o-nas-heading {
+    font-size: 1.8rem;
+  }
+
+  .o-nas-sidebar {
+    display: none;
+  }
+
+  .o-nas-body {
+    background: #dcecff;
+  }
+
+  .o-nas-content {
+    width: 100%;
+    padding: 8px 24px 48px;
+  }
+
+  .o-nas-block-header {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .o-nas-block-header .icon {
+    color: #9DC9FD;
+    font-size: 2.2rem;
+    order: 2;
+  }
+
+  .o-nas-block-header .o-nas-subheading {
+    order: 1;
+  }
+
+  .o-nas-subheading {
+    font-size: 1.05rem;
+  }
+
+  .o-nas-block p {
+    font-size: 0.92rem;
+  }
+
+  .o-nas-pillar .icon {
+    color: #9DC9FD;
+  }
+}

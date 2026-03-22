@@ -1,0 +1,246 @@
+#kontakt {
+  width: 100%;
+  padding: 80px 0 100px;
+  scroll-margin-top: 80px;
+}
+
+.kontakt-heading-row {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.kontakt-heading {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 3vw, 3.2rem);
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.kontakt-intro {
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.8;
+  max-width: 480px;
+  margin: 0 auto 56px;
+}
+
+.kontakt-form {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 6%;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+}
+
+.form-label .optional {
+  font-weight: 400;
+  font-size: 0.82rem;
+  color: #999;
+  margin-left: 6px;
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #1a1a1a;
+  padding: 8px 0;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-bottom-color: #65c388;
+}
+
+.form-input::placeholder {
+  color: #bbb;
+}
+
+.form-temy {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.form-temy-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tema-btn {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  background: #f0f0f0;
+}
+
+.tema-btn:hover {
+  transform: translateY(-1px);
+}
+
+.tema-btn[data-tema="Spolupráca"]         { background: #C4FED1; }
+.tema-btn[data-tema="Spolupráca"].active  { background: #7dd99a; }
+
+.tema-btn[data-tema="Odberné miesto"]         { background: #FEC1F1; }
+.tema-btn[data-tema="Odberné miesto"].active  { background: #f07ee8; }
+
+.tema-btn[data-tema="Produkty"]         { background: #DCECFF; }
+.tema-btn[data-tema="Produkty"].active  { background: #90c0f5; }
+
+.tema-btn[data-tema="Iné"]         { background: #FDFF86; }
+.tema-btn[data-tema="Iné"].active  { background: #e0e200; }
+
+.form-sprava-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #1a1a1a;
+  padding: 8px 0;
+  outline: none;
+  resize: none;
+  width: 100%;
+  min-height: 60px;
+  transition: border-color 0.2s;
+  line-height: 1.7;
+}
+
+.form-textarea:focus {
+  border-bottom-color: #65c388;
+}
+
+.form-textarea::placeholder {
+  color: #bbb;
+}
+
+.form-char-count {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #aaa;
+  text-align: right;
+}
+
+.kontakt-submit {
+  align-self: flex-start;
+  padding: 14px 40px;
+  background: #65c388;
+  color: #1a1a1a;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.kontakt-submit:hover {
+  background: #4daa70;
+  transform: translateY(-2px);
+}
+
+.kontakt-success {
+  display: none;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #3a9e60;
+  margin-top: 8px;
+  align-items: center;
+  gap: 8px;
+}
+
+.kontakt-success.visible {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+
+  #kontakt {
+    padding: 48px 0 64px;
+    scroll-margin-top: 64px;
+  }
+
+  .kontakt-heading {
+    font-size: 1.8rem;
+  }
+
+  .kontakt-intro {
+    font-size: 0.92rem;
+    padding: 0 24px;
+    margin-bottom: 40px;
+  }
+
+  .kontakt-form {
+    padding: 0 24px;
+    gap: 28px;
+  }
+
+  .form-temy {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .form-temy-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .tema-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .kontakt-submit {
+    width: 100%;
+    text-align: center;
+    align-self: stretch;
+    padding: 16px;
+  }
+}

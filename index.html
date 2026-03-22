@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juust – Rastlinné produkty</title>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/header.css" />
+  <link rel="stylesheet" href="styles/hero.css" />
+  <link rel="stylesheet" href="styles/o-nas.css" />
+  <link rel="stylesheet" href="styles/produkty.css" />
+  <link rel="stylesheet" href="styles/spolupraca.css" />
+  <link rel="stylesheet" href="styles/kde-nas-kupis.css" />
+  <link rel="stylesheet" href="styles/kontakt.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="#o-nas">O nás</a>
+        <a href="#produkty">Produkty</a>
+      </nav>
+      <a href="#" class="nav-logo">
+         <img src="assets/logos/juust_logo_transparent.png" alt="Juust logo" />
+      </a>
+      <nav class="nav-right">
+        <a href="#spolupraca">Spolupráca</a>
+        <a href="#kde-nas-kupis">Kde nás kúpiš</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-menu" id="mobile-menu">
+      <a href="#" onclick="closeMobileMenu()">Domov</a>
+      <a href="#o-nas" onclick="closeMobileMenu()">O nás</a>
+      <a href="#produkty" onclick="closeMobileMenu()">Produkty</a>
+      <a href="#spolupraca" onclick="closeMobileMenu()">Spolupráca</a>
+      <a href="#kde-nas-kupis" onclick="closeMobileMenu()">Kde nás kúpiš</a>
+      <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+    </nav>
+
+  </header>
+
+  <section id="hero">
+    <div class="hero-text">
+      <h1 class="hero-title">Rastlinné produkty, ktoré nechutia ako kompromis.</h1>
+      <p class="hero-subtitle">Stavíame na chuti, čistom zložení a proteíne.</p>
+      <a href="#produkty" class="hero-btn">Objav produkty</a>
+    </div>
+    <div class="hero-grid">
+      <!-- 1 -->
+      <div class="grid-cell cell-diagonal-green"><img src="assets/hero/cvikla.png" alt="Cvikla" /></div>
+      <div class="grid-cell cell-pink"><img src="assets/hero/klasik.png" alt="Šmirkas Klasik" /></div>
+      <div class="grid-cell cell-blue"><img src="assets/hero/brinzarka.png" alt="Brinzárka" /></div>
+      <div class="grid-cell cell-yellow"><img src="assets/hero/pikant.png" alt="Šmirkas Pikant" /></div>
+      <!-- 2 -->
+      <div class="grid-cell cell-blue"><img src="assets/hero/brinzarka.png" alt="Brinzárka" /></div>
+      <div class="grid-cell cell-yellow"><img src="assets/hero/pikant.png" alt="Šmirkas Pikant" /></div>
+      <div class="grid-cell cell-diagonal-green"><img src="assets/hero/cvikla.png" alt="Cvikla" /></div>
+      <div class="grid-cell cell-pink"><img src="assets/hero/klasik.png" alt="Šmirkas Klasik" /></div>
+      <!-- 3 -->
+      <div class="grid-cell cell-diagonal-green"><img src="assets/hero/cvikla.png" alt="Cvikla" /></div>
+      <div class="grid-cell cell-pink"><img src="assets/hero/klasik.png" alt="Šmirkas Klasik" /></div>
+      <div class="grid-cell cell-blue"><img src="assets/hero/brinzarka.png" alt="Brinzárka" /></div>
+      <div class="grid-cell cell-yellow"><img src="assets/hero/pikant.png" alt="Šmirkas Pikant" /></div>
+      <!-- 4 -->
+      <div class="grid-cell cell-blue"><img src="assets/hero/brinzarka.png" alt="Brinzárka" /></div>
+      <div class="grid-cell cell-yellow"><img src="assets/hero/pikant.png" alt="Šmirkas Pikant" /></div>
+      <div class="grid-cell cell-diagonal-green"><img src="assets/hero/cvikla.png" alt="Cvikla" /></div>
+      <div class="grid-cell cell-pink"><img src="assets/hero/klasik.png" alt="Šmirkas Klasik" /></div>
+    </div>
+  </section>
+
+  <section id="o-nas">
+    <div class="o-nas-heading-row">
+      <h2 class="o-nas-heading">O nás</h2>
+    </div>
+    <div class="o-nas-body">
+      <div class="o-nas-sidebar">
+         <img src="assets/logos/juust_logo_transparent.png" alt="Juust" class="o-nas-sidebar-logo" />
+      </div>
+      <div class="o-nas-content">
+        <div class="o-nas-block">
+          <div class="o-nas-block-header">
+            <span class="icon"><i class="ph-fill ph-heart"></i></span>
+            <h3 class="o-nas-subheading">Prečo to robíme</h3>
+          </div>
+          <p>Ako ľudia, ktorí sa stravujú primárne rastlinne, sme chceli vytvoriť možnosť jesť dobré a kvalitné jedlo, ktoré naozaj chutí a zároveň telu prináša nutričnú hodnotu. Pre nás je ideálna budúcnosť taká, kde „rastlinné" neznamená „alternatívne", ale jednoducho výborné.</p>
+        </div>
+        <div class="o-nas-block">
+          <div class="o-nas-block-header">
+            <span class="icon"><i class="ph-fill ph-plant"></i></span>
+            <h3 class="o-nas-subheading">Ako to robíme</h3>
+          </div>
+          <p>Väčšinu práce robíme priamo my – zakladatelia. Ručne, poctivo a s dôslednou kontrolou kvality. Držíme vysoké hygienické štandardy a pripravujeme sa na certifikáciu ISO 22000, aby sme bezpečnosť posunuli ešte vyššie. Každú jednu šaržu samostatne testujeme a áno, aj ochutnávame – lebo chuť sa nedá skontrolovať v exceli.</p>
+        </div>
+        <div class="o-nas-block">
+          <div class="o-nas-block-header">
+              <span class="icon"><i class="ph-fill ph-users-three"></i></span>
+            <h3 class="o-nas-subheading">Kto sme</h3>
+          </div>
+          <p>Sme Juust – lokálna výroba priamo v Šamoríne. Budujeme značku, ktorá stojí na troch pilieroch:</p>
+          <div class="o-nas-pillars">
+            <div class="o-nas-pillar">
+              <span class="icon"><i class="ph-fill ph-caret-right"></i></span>
+              <span><strong>chuť</strong>, lebo čo nechutí nám, nikdy nebudeme predávať</span>
+            </div>
+            <div class="o-nas-pillar">
+              <span class="icon"><i class="ph-fill ph-caret-right"></i></span>
+              <span><strong>proteín</strong>, lebo vieme, že na tom záleží zákazníkom, nám aj hejterom</span>
+            </div>
+            <div class="o-nas-pillar">
+              <span class="icon"><i class="ph-fill ph-caret-right"></i></span>
+              <span><strong>komunita</strong>, lebo chceme jedlom spájať ľudí a vytvárať si k jedlu zdravý vzťah bez extrémov a výčitiek</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="produkty">
+    <div class="produkty-heading-row">
+      <h2 class="produkty-heading">Produkty</h2>
+    </div>
+    <div class="produkt-row">
+      <div class="produkt-img-wrap">
+        <div class="produkt-bg" style="background: #DCECFF;"></div>
+        <img src="assets/hero/brinzarka.png" alt="Brinzárka" />
+      </div>
+      <div class="produkt-text">
+        <h3 class="produkt-nazov">Brinzárka (125g)</h3>
+        <p class="produkt-popis">Bezmliečna a bezlepková alternatíva bryndze pre ľudí s intoleranciou na laktózu a kazeín, aj pre vegánov a vegetariánov. Výrazná bryndzová chuť a univerzálne použitie.</p>
+      </div>
+    </div>
+    <div class="produkt-row reversed">
+      <div class="produkt-img-wrap">
+        <div class="produkt-bg" style="background: #FEC1F1;"></div>
+        <img src="assets/hero/klasik.png" alt="Šmirkas Klasik" />
+      </div>
+      <div class="produkt-text">
+        <h3 class="produkt-nazov">Šmirkas Klasik (125g)</h3>
+        <p class="produkt-popis">Tradičná papriková nátierka z bryndze, postavená na našej Brinzárke. Chuťovo plná a návyková. Podľa zákazníkov často chutí ešte lepšie než originál.</p>
+      </div>
+    </div>
+    <div class="produkt-row">
+      <div class="produkt-img-wrap">
+        <div class="produkt-bg" style="background: #FDFF86;"></div>
+        <img src="assets/hero/pikant.png" alt="Šmirkas Pikant" />
+      </div>
+      <div class="produkt-text">
+        <h3 class="produkt-nazov">Šmirkas Pikant (125g)</h3>
+        <p class="produkt-popis">Rovnaký tradičný základ so štipkou štipľavej papriky pre tých, ktorí to majú radi ostrejšie. Výborný na chlieb, do wrapov aj ako dip.</p>
+      </div>
+    </div>
+    <div class="produkt-row reversed">
+      <div class="produkt-img-wrap">
+        <div class="produkt-bg" style="background: #C4FED1;"></div>
+        <img src="assets/hero/cvikla.png" alt="Cviklová nátierka" />
+      </div>
+      <div class="produkt-text">
+        <h3 class="produkt-nazov">Cviklová nátierka (125g)</h3>
+        <p class="produkt-popis">Výrazná kombinácia rastlinnej bryndze a cvikly. Krásne ružová, jemne sladkastá. Deti ju milujú najmä kvôli farbe, dospelí kvôli výraznej chuti.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="spolupraca">
+    <div class="spolupraca-heading-row">
+      <h2 class="spolupraca-heading">Spolupráca</h2>
+    </div>
+    <div class="spolupraca-logo-row">
+        <img src="assets/logos/logo-black.svg" alt="Juust" class="spolupraca-logo-placeholder" />
+    </div>
+    <p class="spolupraca-intro">
+        Juust sa stal výhradným distribútorom značky Revo Foods z Rakúska. Všetky ich produkty nájdete automaticky v našom <portfóliu class=""></portfóliu>
+    </p>
+    <div class="spolupraca-grid">
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#C4FED1;"><img src="assets/spolupraca/kraken.png" alt="Produkt 1" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">8-ramenný filet</h3><p class="spolupraca-card-popis">Jediná vegánska chobotnica na svete! Vyrobená z fermentovaného mykoproteínu, s vysokým obsahom bielkovín, bohatá na vlákninu a omega-3 mastné kyseliny. Realistická textúra a tvar vás ohromia!</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#FEC1F1;"><img src="assets/spolupraca/lsos.png" alt="Produkt 2" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">L-sos filet</h3><p class="spolupraca-card-popis">Autentický filet ako z lososa - šťavnatý, vyrobený z mykoproteínu, vďaka čomu si zachováva  mäsitú štruktúru s prirodzene vláknitou textúrou. Spracovaný tak, aby si zachoval prirodzené živiny! Tento filet ponúka skvelú chuť, uspokojivý pocit v ústach a telu potrebné bielkoviny. </p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#DCECFF;"><img src="assets/spolupraca/azia.png" alt="Produkt 3" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">L-sos Ázia</h3><p class="spolupraca-card-popis">Výrazná marináda inšpirovaná ázijskou kuchyňou, ktorá podčiarkuje bohatú šťavnatosť filé. Silná umami chuť sa snúbi s vyváženou pikantnosťou, vďaka čomu je každé sústo vzrušujúce.</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#FDFF86;"><img src="assets/spolupraca/lsosBBQ.png" alt="Produkt 4" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">L-sos filet BBQ</h3><p class="spolupraca-card-popis">Autentická alternatíva lososového filetu v príchuti BBQ. Pochádza z úplne prvej línie produktov tejto značky a dodnes je to najpredávanejší kus!</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#C4FED1;"><img src="assets/spolupraca/smokey.png" alt="Produkt 5" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">Smoked slices</h3><p class="spolupraca-card-popis">100 % rastlinné plátky s jemnou chuťou údeného lososa. Vyrobené z mikrorias, ktoré dodávajú čistú chuť inšpirovanú oceánom a cenné živiny. Jemné, chutné a univerzálne. Ideálne na brunch alebo sofistikované predjedlá.</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#FEC1F1;"><img src="assets/spolupraca/gravlax.png" alt="Produkt 6" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">Gravlax</h3><p class="spolupraca-card-popis">100 % rastlinné plátky lososa ochutené severskými bylinkami a citrónom. Čerstvé, jemné a vyvážené, s jemnou bylinkovo-citrónovou príchuťou, ktorá dopĺňa jemnú textúru.</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#DCECFF;"><img src="assets/spolupraca/ruzove.png" alt="Produkt 7" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">L-sos ružové korenie</h3><p class="spolupraca-card-popis">Filet s marinádou z ružového korenia a citróna. Svieža, aromatická a jemne výrazná marináda zvýrazňuje šťavnaté vrstvy filetu jasnými citrusovými tónmi a jemnou pikantnosťou korenia. Pripravená na vyprážanie priamo z balenia.</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#FDFF86;"><img src="assets/spolupraca/prime.png" alt="Produkt 8" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">Prvotriedny rez</h3><p class="spolupraca-card-popis">Proteín novej generácie navrhnutý tak, aby prekonal všetky očakávania. Vyrobený z hubového proteínu, má šťavnatú chuť a prirodzenú umami, ktorá sa hodí do každodenného varenia. Je univerzálny ako kuracie mäso alebo tofu, ale je vyrobený výlučne z húb. Je určený pre vyváženú výživu a aktívny životný štýl.</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#C4FED1;"><img src="assets/spolupraca/hubove.png" alt="Produkt 9" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">Mleté hubové</h3><p class="spolupraca-card-popis">Mleté hubové nie je len náhradou mäsa - je to samostatný produkt s vysokým obsahom proteínu až 24,8 g na 160 g!</p></div></div></div>
+      <div class="spolupraca-card"><div class="spolupraca-card-bg" style="background:#FEC1F1;"><img src="assets/spolupraca/blanco.png" alt="Produkt 10" /><div class="spolupraca-card-info"><h3 class="spolupraca-card-nazov">El-Blanco</h3><p class="spolupraca-card-popis">El Blanco Morský vlk vznikol minulý rok ako novinka spolu s produktmi Mleté hubové či alternatíva chobotnice. Odvtedy sa stal spolu s lososovými filetmi najpredávanejšou položkou vďaka svojej neuveriteľnej štruktúre podobnej rybiemu mäsu.</p></div></div></div>
+    </div>
+  </section>
+
+  <section id="kde-nas-kupis">
+    <div class="kde-heading-row">
+      <h2 class="kde-heading">Kde nás kúpiš</h2>
+    </div>
+    <p class="kde-intro">
+        V maloobchode aj v gastre. Pre viac informácií klikni na mapu a zisti v ktorých pobočkách nájdeš naše produkty.
+    </p>
+    <div class="kde-mapa">
+      <div class="kde-mapa-clip">
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=11gxweeQvMiTI2N3LwRPyqY0DLmpNz_E&ehbc=2E312F&noprof=1"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+  <section id="kontakt">
+    <div class="kontakt-heading-row">
+      <h2 class="kontakt-heading">Kontakt</h2>
+    </div>
+    <p class="kontakt-intro">
+      Chceš mať Juust vo svojej prevádzke alebo predajni? Napíš nám!
+    </p>
+    <form id="kontakt-form" class="kontakt-form">
+      <input type="hidden" id="tema-hidden" name="tema" />
+      <!-- Honeypot — skryté pred ľuďmi, boti ho vyplnia a email sa nezašle -->
+      <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off" />
+
+      <div class="form-field">
+        <label class="form-label" for="meno">Meno a Priezvisko</label>
+        <input class="form-input" type="text" id="meno" name="meno" required />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-field">
+        <label class="form-label" for="telefon">
+          Telefón <span class="optional">(voliteľné)</span>
+        </label>
+        <input class="form-input" type="tel" id="telefon" name="telefon" />
+      </div>
+
+      <div class="form-field form-temy">
+        <label class="form-label">Téma</label>
+        <div class="form-temy-row">
+          <button type="button" class="tema-btn" data-tema="Spolupráca">Spolupráca</button>
+          <button type="button" class="tema-btn" data-tema="Odberné miesto">Odberné miesto</button>
+          <button type="button" class="tema-btn" data-tema="Produkty">Produkty</button>
+          <button type="button" class="tema-btn" data-tema="Iné">Iné</button>
+        </div>
+      </div>
+
+      <div class="form-field form-sprava-wrap">
+        <label class="form-label" for="sprava">Správa</label>
+        <textarea
+          class="form-textarea"
+          id="sprava"
+          name="sprava"
+          maxlength="500"
+          placeholder="Napíšte nám pár viet. Ozveme sa vám čo najskôr!"
+          required
+        ></textarea>
+        <span class="form-char-count" id="char-count">0 / 500</span>
+      </div>
+
+      <button type="submit" class="kontakt-submit" id="kontakt-submit">Odoslať</button>
+
+      <div class="kontakt-success" id="kontakt-success">
+        <i class="ph-fill ph-check-circle"></i>
+        Email bol úspešne odoslaný.
+      </div>
+    </form>
+  </section>
+
+  <footer id="footer">
+    <div class="footer-top">
+
+      <div class="footer-logo-col">
+        <div class="footer-logo">
+            <img src="assets/logos/juust_logo_transparent.png" alt="Juust logo" class="footer-logo-placeholder" />
+        </div>
+        <p class="footer-copyright">©2026 Juust. All rights reserved.</p>
+      </div>
+      <div class="footer-nav-col">
+        <h4>Stránka</h4>
+        <a href="#">Domov</a>
+        <a href="#o-nas">O nás</a>
+        <a href="#produkty">Produkty</a>
+        <a href="#spolupraca">Spolupráca</a>
+        <a href="#kde-nas-kupis">Kde nás kúpiš</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <div class="footer-contacts-col">
+        <h4>Priame kontakty</h4>
+        <div class="footer-contact-item">
+          <p><strong>Meno Priezvisko</strong></p>
+          <p>Tel.: +421 100 100 100</p>
+          <p>Email: ahoj@juust.sk</p>
+        </div>
+        <div class="footer-contact-item">
+          <p><strong>Meno Priezvisko</strong></p>
+          <p>Tel.: +421 200 200 200</p>
+          <p>Email: ahoj2@juust.sk</p>
+        </div>
+      </div>
+      <div class="footer-firma-col">
+        <h4>O firme</h4>
+        <p><strong>Juust s.r.o.</strong></p>
+        <p>Ulica 1</p>
+        <p>931 01 Šamorín</p>
+        <p>IČO: 12345678</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/hero.js" defer></script>
+  <script src="js/menu.js" defer></script>
+  <script src="js/kontakt.js" defer></script>
+  <script src="js/scroll-animations.js" defer></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+</body>
+</html>
