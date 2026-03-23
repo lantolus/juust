@@ -167,7 +167,7 @@
   .spolupraca-card {
     flex: 0 0 72vw;
     scroll-snap-align: start;
-    height: 480px;
+    height: 540px;
   }
 
   .spolupraca-card-bg {
