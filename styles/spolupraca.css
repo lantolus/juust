@@ -140,18 +140,18 @@
     text-align: center;
   }
 
-  /* Swiper container */
   .spolupraca-grid {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-padding-left: calc((100vw - 72vw) / 2);
     gap: 16px;
     padding-left: calc((100vw - 72vw) / 2);
     padding-right: calc((100vw - 72vw) / 2);
     padding-bottom: 20px;
-    padding-top: 0;
+    padding-top: 8px;
     box-sizing: border-box;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -167,7 +167,7 @@
   .spolupraca-card {
     flex: 0 0 72vw;
     scroll-snap-align: start;
-    height: 550px;
+    height: 480px;
   }
 
   .spolupraca-card-bg {
@@ -178,7 +178,7 @@
   }
 
   .spolupraca-card-bg img {
-    width: 100%;
+    width: 70%;
     flex-shrink: 0;
   }
 
