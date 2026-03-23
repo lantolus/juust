@@ -166,7 +166,8 @@
 
   .spolupraca-card {
     flex: 0 0 72vw;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     height: 540px;
   }
 
