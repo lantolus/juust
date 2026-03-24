@@ -72,6 +72,7 @@
   height: 100%;
 }
 
+
 @keyframes bottle-entrance {
   0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.72); }
   60%  { opacity: 1; transform: translate(-50%, -50%) scale(1.06); }
@@ -161,10 +162,10 @@
   .hero-grid {
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, calc(100vw / 4));
+    grid-template-rows: repeat(4, calc(100vw / 4));
   }
 
   .hero-grid .grid-cell:nth-child(n+13) {
-    display: none;
+    display: block;
   }
 }
