@@ -214,64 +214,66 @@
     </div>
   </section>
   <section id="kontakt">
-    <div class="kontakt-heading-row">
-      <h2 class="kontakt-heading">Kontakt</h2>
-    </div>
-    <p class="kontakt-intro">
-      Chceš mať Juust vo svojej prevádzke alebo predajni? Napíš nám!
-    </p>
-    <form id="kontakt-form" class="kontakt-form">
-      <input type="hidden" id="tema-hidden" name="tema" />
-      <!-- Honeypot  -->
-      <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off" />
-
-      <div class="form-field">
-        <label class="form-label" for="meno">Meno a Priezvisko</label>
-        <input class="form-input" type="text" id="meno" name="meno" required />
+      <div class="kontakt-heading-row">
+          <h2 class="kontakt-heading">Kontakt</h2>
       </div>
+      <p class="kontakt-intro">
+          Chceš mať Juust vo svojej prevádzke alebo predajni? Napíš nám!
+      </p>
 
-      <div class="form-field">
-        <label class="form-label" for="email">Email</label>
-        <input class="form-input" type="email" id="email" name="email" required />
-      </div>
+      <form id="kontakt-form" class="kontakt-form" action="send.php" method="POST">
 
-      <div class="form-field">
-        <label class="form-label" for="telefon">
-          Telefón <span class="optional">(voliteľné)</span>
-        </label>
-        <input class="form-input" type="tel" id="telefon" name="telefon" />
-      </div>
+          <input type="hidden" id="tema-hidden" name="tema" />
 
-      <div class="form-field form-temy">
-        <label class="form-label">Téma</label>
-        <div class="form-temy-row">
-          <button type="button" class="tema-btn" data-tema="Spolupráca">Spolupráca</button>
-          <button type="button" class="tema-btn" data-tema="Odberné miesto">Odberné miesto</button>
-          <button type="button" class="tema-btn" data-tema="Produkty">Produkty</button>
-          <button type="button" class="tema-btn" data-tema="Iné">Iné</button>
-        </div>
-      </div>
+          <input type="text" name="website" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
-      <div class="form-field form-sprava-wrap">
-        <label class="form-label" for="sprava">Správa</label>
-        <textarea
-          class="form-textarea"
-          id="sprava"
-          name="sprava"
-          maxlength="500"
-          placeholder="Napíšte nám pár viet. Ozveme sa vám čo najskôr!"
-          required
-        ></textarea>
-        <span class="form-char-count" id="char-count">0 / 500</span>
-      </div>
+          <div class="form-field">
+              <label class="form-label" for="meno">Meno a Priezvisko</label>
+              <input class="form-input" type="text" id="meno" name="meno" required />
+          </div>
 
-      <button type="submit" class="kontakt-submit" id="kontakt-submit">Odoslať</button>
+          <div class="form-field">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" required />
+          </div>
 
-      <div class="kontakt-success" id="kontakt-success">
-        <i class="ph-fill ph-check-circle"></i>
-        Email bol úspešne odoslaný.
-      </div>
-    </form>
+          <div class="form-field">
+              <label class="form-label" for="telefon">
+                  Telefón <span class="optional">(voliteľné)</span>
+              </label>
+              <input class="form-input" type="tel" id="telefon" name="telefon" />
+          </div>
+
+          <div class="form-field form-temy">
+              <label class="form-label">Téma</label>
+              <div class="form-temy-row">
+                  <button type="button" class="tema-btn" data-tema="Spolupráca">Spolupráca</button>
+                  <button type="button" class="tema-btn" data-tema="Odberné miesto">Odberné miesto</button>
+                  <button type="button" class="tema-btn" data-tema="Produkty">Produkty</button>
+                  <button type="button" class="tema-btn" data-tema="Iné">Iné</button>
+              </div>
+          </div>
+
+          <div class="form-field form-sprava-wrap">
+              <label class="form-label" for="sprava">Správa</label>
+              <textarea
+                      class="form-textarea"
+                      id="sprava"
+                      name="sprava"
+                      maxlength="500"
+                      placeholder="Napíšte nám pár viet. Ozveme sa vám čo najskôr!"
+                      required
+              ></textarea>
+              <span class="form-char-count" id="char-count">0 / 500</span>
+          </div>
+
+          <button type="submit" class="kontakt-submit" id="kontakt-submit">Odoslať</button>
+
+          <div class="kontakt-success" id="kontakt-success" style="display: none;">
+              <i class="ph-fill ph-check-circle"></i>
+              <span class="msg-text">Email bol úspešne odoslaný.</span>
+          </div>
+      </form>
   </section>
 
   <footer id="footer">

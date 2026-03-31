@@ -1,14 +1,4 @@
 <?php
-// =====================
-// send.php — kontaktný formulár
-// =====================
-// ANTI-SPAM NASTAVENIA:
-// 1. Nastav SPF záznam na svojej doméne (v DNS):
-//    TXT @ "v=spf1 include:váš-hosting.sk ~all"
-// 2. "From" adresa MUSÍ byť z rovnakej domény ako web
-//    (napr. noreply@juust.sk) — inak skončí v spame
-// 3. Reply-To nastavíme na email návštevníka
-// =====================
 
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
@@ -20,104 +10,104 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// ---- KONFIGURÁCIA — ZMEŇ TIETO HODNOTY ----
-$prijemca      = 'tvoj@juust.sk';        // kam príde email
-$odosielatel   = 'noreply@juust.sk';     // MUSÍ byť z tvojej domény
+$prijemca       = 'tvoj@juust.sk';
+$odosielatel    = 'noreply@juust.sk';
 $predmet_prefix = '[Juust Web] ';
-// -------------------------------------------
 
-// ---- HONEYPOT anti-spam (skryté pole v HTML) ----
-// Ak bot vyplní pole "website", zahod požiadavku
 if (!empty($_POST['website'])) {
-    http_response_code(200); // tvárime sa že ok, bot nesmie vedieť
+    http_response_code(200);
     echo json_encode(['success' => true]);
     exit;
 }
 
-// ---- RATE LIMITING — max 3 správy za hodinu z jednej IP ----
-$ip       = $_SERVER['REMOTE_ADDR'];
-$lockFile = sys_get_temp_dir() . '/juust_rl_' . md5($ip) . '.json';
+// 2. RATE LIMITING (Max 3 správy za hodinu z jednej IP)
+$ip      = $_SERVER['REMOTE_ADDR'];
+$logDir  = __DIR__ . '/logs_contact';
+
+if (!is_dir($logDir)) {
+    mkdir($logDir, 0755, true);
+    file_put_contents($logDir . '/.htaccess', "Deny from all");
+}
+
+$lockFile = $logDir . '/rl_' . md5($ip) . '.json';
 $limit    = 3;
-$window   = 3600; // sekúnd
+$window   = 3600; // 1 hodina
 
 $attempts = [];
 if (file_exists($lockFile)) {
     $attempts = json_decode(file_get_contents($lockFile), true) ?: [];
 }
+
 $now      = time();
-$attempts = array_filter($attempts, fn($t) => $now - $t < $window);
+$attempts = array_filter($attempts, function($t) use ($now, $window) {
+    return $now - $t < $window;
+});
 
 if (count($attempts) >= $limit) {
     http_response_code(429);
-    echo json_encode(['success' => false, 'message' => 'Príliš veľa pokusov. Skúste neskôr.']);
+    echo json_encode(['success' => false, 'message' => 'Príliš veľa pokusov. Skúste to prosím o hodinu.']);
     exit;
 }
 
-// ---- VSTUPNÉ DÁTA ----
 $meno    = trim(strip_tags($_POST['meno']    ?? ''));
 $email   = trim(strip_tags($_POST['email']   ?? ''));
 $telefon = trim(strip_tags($_POST['telefon'] ?? ''));
-$tema    = trim(strip_tags($_POST['tema']    ?? 'Nezvolená'));
+$tema    = trim(strip_tags($_POST['tema']    ?? 'Všeobecný dotaz'));
 $sprava  = trim(strip_tags($_POST['sprava']  ?? ''));
 
-// ---- VALIDÁCIA ----
 if (empty($meno) || empty($email) || empty($sprava)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Vyplňte všetky povinné polia.']);
+    echo json_encode(['success' => false, 'message' => 'Vyplňte prosím všetky povinné polia.']);
     exit;
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Neplatná emailová adresa.']);
+    echo json_encode(['success' => false, 'message' => 'Zadajte platnú emailovú adresu.']);
     exit;
 }
 
-if (mb_strlen($sprava) > 500) {
+if (mb_strlen($sprava) > 1500) {
     http_response_code(400);
     echo json_encode(['success' => false, 'message' => 'Správa je príliš dlhá.']);
     exit;
 }
 
-// Ochrana pred header injection
 foreach ([$meno, $email, $telefon, $tema] as $pole) {
     if (preg_match('/[\r\n]/', $pole)) {
         http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Neplatné údaje.']);
+        echo json_encode(['success' => false, 'message' => 'Neplatné znaky v poliach.']);
         exit;
     }
 }
 
-// ---- ZOSTAVENIE EMAILU ----
 $predmet = mb_encode_mimeheader($predmet_prefix . $tema . ' — ' . $meno, 'UTF-8');
 
 $telo  = "Nová správa z kontaktného formulára na juust.sk\n";
-$telo .= str_repeat('-', 48) . "\n\n";
-$telo .= "Meno:     $meno\n";
+$telo .= "------------------------------------------------\n\n";
+$telo .= "Od:       $meno\n";
 $telo .= "Email:    $email\n";
-$telo .= "Telefón:  " . ($telefon ?: '—') . "\n";
+$telo .= "Telefón:  " . ($telefon ?: 'neuvedené') . "\n";
 $telo .= "Téma:     $tema\n\n";
 $telo .= "Správa:\n$sprava\n\n";
-$telo .= str_repeat('-', 48) . "\n";
-$telo .= "Táto správa bola odoslaná z juust.sk\n";
+$telo .= "------------------------------------------------\n";
+$telo .= "Odoslané z IP: $ip\n";
 
 $hlavicky  = "From: Juust Web <{$odosielatel}>\r\n";
 $hlavicky .= "Reply-To: {$meno} <{$email}>\r\n";
 $hlavicky .= "MIME-Version: 1.0\r\n";
 $hlavicky .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $hlavicky .= "Content-Transfer-Encoding: 8bit\r\n";
-$hlavicky .= "X-Mailer: PHP/" . phpversion() . "\r\n";
+$hlavicky .= "X-Mailer: PHP/" . phpversion();
 
-// ---- ODOSLANIE ----
 $odoslane = mail($prijemca, $predmet, $telo, $hlavicky);
 
 if ($odoslane) {
-    // Ulož pokus do rate limit logu
     $attempts[] = $now;
     file_put_contents($lockFile, json_encode(array_values($attempts)));
 
-    echo json_encode(['success' => true, 'message' => 'Email bol úspešne odoslaný.']);
+    echo json_encode(['success' => true, 'message' => 'Správa bola úspešne odoslaná.']);
 } else {
     http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Nastala chyba pri odoslaní. Skúste neskôr.']);
+    echo json_encode(['success' => false, 'message' => 'Chyba servera pri odosielaní. Skúste to neskôr.']);
 }

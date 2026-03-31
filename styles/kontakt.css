@@ -162,8 +162,8 @@
 }
 
 .kontakt-submit {
-  align-self: flex-start;
-  padding: 14px 40px;
+  align-self: center;
+  padding: 14px 60px;
   background: #65c388;
   color: #1a1a1a;
   font-family: 'Work Sans', sans-serif;
@@ -172,7 +172,18 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: all 0.2s ease;
+}
+
+.kontakt-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.kontakt-form input[name="website"] {
+  display: none !important;
+  visibility: hidden !important;
 }
 
 .kontakt-submit:hover {
@@ -186,13 +197,21 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: #3a9e60;
-  margin-top: 8px;
+  margin-top: 24px;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  text-align: center;
 }
 
 .kontakt-success.visible {
   display: flex;
+  animation: fadeInDown 0.4s ease;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {
@@ -238,9 +257,7 @@
   }
 
   .kontakt-submit {
-    width: 100%;
-    text-align: center;
     align-self: stretch;
-    padding: 16px;
+    width: 100%;
   }
 }
