@@ -136,6 +136,7 @@
     width: 100%;
     height: 240px;
     flex-shrink: 0;
+    overflow: hidden;
   }
 
   .produkt-bg,
@@ -152,10 +153,10 @@
   .produkt-row.reversed .produkt-img-wrap img {
     left: 50%;
     right: auto;
-    bottom: -16px;
+    bottom: 0;
     transform: translateX(-50%);
     width: auto;
-    height: 110%;
+    height: 100%;
   }
 
   .produkt-text,
