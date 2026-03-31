@@ -16,7 +16,7 @@ function initScrollAnimations() {
     { selector: '.spolupraca-heading',   anim: 'fade-up', stagger: 0 },
     { selector: '.spolupraca-logo-row',  anim: 'fade-up', stagger: 0.08 },
     { selector: '.spolupraca-intro',     anim: 'fade-up', stagger: 0.12 },
-    { selector: '.spolupraca-card',      anim: 'fade-up', stagger: 0.08 },
+    { selector: '.spolupraca-card',      anim: 'fade-up', stagger: 0.04 },
 
     // KDE NÁS KÚPIŠ
     { selector: '.kde-heading',  anim: 'fade-up',    stagger: 0 },
